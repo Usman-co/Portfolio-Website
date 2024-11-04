@@ -1,8 +1,138 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollElements = document.querySelectorAll(".container");
+
+  const elementInView = (el, percentageScroll = 100) => {
+    const elementTop = el.getBoundingClientRect().top;
+    const elementBottom = el.getBoundingClientRect().bottom;
+
+    return (
+      elementTop <= (window.innerHeight || document.documentElement.clientHeight) * (percentageScroll / 100) &&
+      elementBottom >= 0
+    );
+  };
+
+  const displayScrollElement = (element) => {
+    element.classList.add("visible");
+  };
+
+  const hideScrollElement = (element) => {
+    element.classList.remove("visible");
+  };
+
+  const handleScrollAnimation = () => {
+    scrollElements.forEach((el) => {
+      if (elementInView(el, 100)) {
+        displayScrollElement(el);
+      } else {
+        hideScrollElement(el);
+      }
+    });
+  };
+
+  window.addEventListener("scroll", () => {
+    handleScrollAnimation();
+  });
+
+  // Initial check in case elements are already in view
+  handleScrollAnimation();
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollElements = document.querySelectorAll(".content-about");
+
+  const elementInView = (el, percentageScroll = 100) => {
+    const elementTop = el.getBoundingClientRect().top;
+    const elementBottom = el.getBoundingClientRect().bottom;
+
+    return (
+      elementTop <= (window.innerHeight || document.documentElement.clientHeight) * (percentageScroll / 100) &&
+      elementBottom >= 0
+    );
+  };
+
+  const displayScrollElement = (element) => {
+    element.classList.add("visible");
+  };
+
+  const hideScrollElement = (element) => {
+    element.classList.remove("visible");
+  };
+
+  const handleScrollAnimation = () => {
+    scrollElements.forEach((el) => {
+      if (elementInView(el, 100)) {
+        displayScrollElement(el);
+      } else {
+        hideScrollElement(el);
+      }
+    });
+  };
+
+  window.addEventListener("scroll", () => {
+    handleScrollAnimation();
+  });
+
+  // Initial check in case elements are already in view
+  handleScrollAnimation();
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollElements = document.querySelectorAll(".scroll-element");
+  let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+  const elementInView = (el, percentageScroll = 100) => {
+    const elementTop = el.getBoundingClientRect().top;
+    const elementBottom = el.getBoundingClientRect().bottom;
+
+    return (
+      elementTop <= (window.innerHeight || document.documentElement.clientHeight) * (percentageScroll / 100) &&
+      elementBottom >= 0
+    );
+  };
+
+  const displayScrollElement = (element) => {
+    element.classList.add("visible");
+  };
+
+  const hideScrollElement = (element) => {
+    element.classList.remove("visible");
+  };
+
+  const handleScrollAnimation = () => {
+    const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScrollTop < lastScrollTop) {
+      // Scrolling up
+      scrollElements.forEach((el) => {
+        if (elementInView(el, 100)) {
+          displayScrollElement(el);
+        } else {
+          hideScrollElement(el);
+        }
+      });
+    }
+
+    lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // For Mobile or negative scrolling
+  };
+
+  window.addEventListener("scroll", () => {
+    handleScrollAnimation();
+  });
+
+  // Initial check in case elements are already in view
+  handleScrollAnimation();
+});
+
+
+
 var _CONTENT = [
     "Frontend Development",
-    "Backend Development",
+    "WordPress Development",
     "Web Designing",
-    "Android Development",
+    "E-Commerce Development",
     "Web Development"
 ];
 
@@ -52,125 +182,61 @@ function Delete() {
 }
 _INTERVAL_VAL = setInterval(Type, 100);
 
- // JavaScript to autoplay the carousel
- document.addEventListener("DOMContentLoaded", function() {
-    // Get the carousel element
-    var carouselElement = document.getElementById("carouselExampleSlidesOnly");
 
-    // Initialize index variable to track the current slide
-    var currentIndex = 0;
 
-    // Set an interval to switch to the next slide every 3 seconds (3000 milliseconds)
-    var intervalId = setInterval(function() {
-      // Increment the index to move to the next slide
-      currentIndex++;
+document.addEventListener('DOMContentLoaded', function () {
+  // Menu toggle functionality
+  const menu = document.getElementById('menu');
+  const navbar = document.querySelector('.navbar');
 
-      // If we reach the end of the slides, loop back to the beginning
-      if (currentIndex === carouselElement.querySelectorAll(".carousel-item").length) {
-        currentIndex = 0;
-      }
-
-      // Set the appropriate slide as active
-      carouselElement.querySelector(".carousel-item.active").classList.remove("active");
-      carouselElement.querySelectorAll(".carousel-item")[currentIndex].classList.add("active");
-    }, 3000); // Change the time interval as needed (in milliseconds)
-
-    // Stop the carousel autoplay when the mouse enters the carousel
-    carouselElement.addEventListener("mouseenter", function() {
-      clearInterval(intervalId);
-    });
-
-    // Restart the carousel autoplay when the mouse leaves the carousel
-    carouselElement.addEventListener("mouseleave", function() {
-      intervalId = setInterval(function() {
-        currentIndex++;
-        if (currentIndex === carouselElement.querySelectorAll(".carousel-item").length) {
-          currentIndex = 0;
-        }
-        carouselElement.querySelector(".carousel-item.active").classList.remove("active");
-        carouselElement.querySelectorAll(".carousel-item")[currentIndex].classList.add("active");
-      }, 3000);
-    });
+  menu.addEventListener('click', function () {
+      menu.classList.toggle('fa-times');
+      navbar.classList.toggle('nav-toggle');
   });
 
+  // Scroll and load events
+  window.addEventListener('scroll', handleScrollLoad);
+  window.addEventListener('load', handleScrollLoad);
 
-  // Keep track of the last scroll position to determine scrolling direction
-var lastScrollPosition = window.pageYOffset;
+  function handleScrollLoad() {
+      menu.classList.remove('fa-times');
+      navbar.classList.remove('nav-toggle');
 
-window.addEventListener('scroll', reveal);
+      const scrollTopButton = document.querySelector('#scroll-top');
+      if (window.scrollY > 60) {
+          scrollTopButton.classList.add('active');
+      } else {
+          scrollTopButton.classList.remove('active');
+      }
 
-function reveal() {
-    var reveals = document.querySelectorAll('.reveal');
+      // Scroll spy functionality
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('.navbar ul li a');
+      sections.forEach(function (section) {
+          let height = section.offsetHeight;
+          let offset = section.offsetTop - 200;
+          let top = window.scrollY;
+          let id = section.getAttribute('id');
 
-    for (var i = 0; i < reveals.length; i++) {
-        var windowHeight = window.innerHeight;
-        var revealTop = reveals[i].getBoundingClientRect().top;
-        var revealBottom = reveals[i].getBoundingClientRect().bottom;
-        var revealPoint = windowHeight * 0.75;
+          if (top > offset && top < offset + height) {
+              navLinks.forEach(function (link) {
+                  link.classList.remove('active');
+              });
+              document.querySelector(`.navbar a[href="#${id}"]`).classList.add('active');
+          }
+      });
+  }
 
-        // Calculate the position of the top and bottom of the section containing the reveal element
-        var sectionTop = reveals[i].closest('section').getBoundingClientRect().top;
-        var sectionBottom = reveals[i].closest('section').getBoundingClientRect().bottom;
-
-        // Adjust revealPoint based on scrolling direction
-        var scrollDirection = window.pageYOffset > lastScrollPosition ? 'down' : 'up';
-        var triggerPoint;
-
-        if (scrollDirection === 'down') {
-            // Scroll direction: down
-            triggerPoint = windowHeight - sectionTop;
-        } else {
-            // Scroll direction: up
-            triggerPoint = sectionBottom - revealPoint;
-        }
-
-        if (triggerPoint > 0 && triggerPoint <= revealPoint) {
-            reveals[i].classList.add('active');
-        } else {
-            reveals[i].classList.remove('active');
-        }
-    }
-
-    // Update the last scroll position
-    lastScrollPosition = window.pageYOffset;
-}
-
-// $(document).ready(function () {
-
-//     $('#menu').click(function () {
-//         $(this).toggleClass('fa-times');
-//         $('.menu').toggleClass('nav-toggle');
-//     });
-
-//     $(window).on('scroll load', function () {
-//         $('#menu').removeClass('fa-times');
-//         $('.menu').removeClass('nav-toggle');
-
-//         if (window.scrollY > 60) {
-//             document.querySelector('#scroll-top').classList.add('active');
-//         } else {
-//             document.querySelector('#scroll-top').classList.remove('active');
-//         }
-
-//         // scroll spy
-//         $('section').each(function () {
-//             let height = $(this).height();
-//             let offset = $(this).offset().top - 200;
-//             let top = $(window).scrollTop();
-//             let id = $(this).attr('id');
-
-//             if (top > offset && top < offset + height) {
-//                 $('.menu ul li a').removeClass('active');
-//                 $('.menu').find(`[href="#${id}"]`).addClass('active');
-//             }
-//         });
-//     });
-
-//     // smooth scrolling
-//     $('a[href*="#"]').on('click', function (e) {
-//         e.preventDefault();
-//         $('html, body').animate({
-//             scrollTop: $($(this).attr('href')).offset().top,
-//         }, 500, 'linear')
-//     });
-// })
+  // Smooth scrolling
+  const smoothScrollLinks = document.querySelectorAll('a[href*="#"]');
+  smoothScrollLinks.forEach(function (link) {
+      link.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          window.scrollTo({
+              top: target.offsetTop,
+              behavior: 'smooth'
+          });
+      });
+  });
+});

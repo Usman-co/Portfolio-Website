@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project 6</title>
+    <title>Portfolio | Usman Ali</title>
     <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
@@ -21,114 +21,106 @@
     />
   </head>
   <body>
+    <!-- pre loader -->
+<!-- <div class="loader-container">
+  <img draggable="false" src="./assets/images/preloader.gif" alt="">
+</div> -->
     <!-- Main Menu -->
+<!-- navbar starts -->
+<header>
+  <a href="/" class="logo"><i class="fab fa-node-js"></i> Usman</a>
 
-    <header>
-      <a href="#" class="logo">
-        <i class="fa-solid fa-mug-hot"></i>JavaScript</a
-      >
-       
-      <!-- <div id="menu" class="fas fa-bars"></div> -->
-      <nav class="menu">
-        <ul>
-          <li><a href="#Home" class="active">Home</a></li>
-          <li><a href="#About">About</a></li>
-          <li><a href="#Skills">Skills</a></li>
-          <li><a href="#Education">Education</a></li>
-          <li><a href="#Work">Work</a></li>
-          <li><a href="#Experience">Experience</a></li>
-          <li><a href="#Contact">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+  <div id="menu" class="fas fa-bars"></div>
+  <nav class="navbar">
+      <ul>
+      <li><a class="active" href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#Education">Education</a></li>
+      <!-- <li><a href="#work">Work</a></li> -->
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+      </ul>
+  </nav>
+</header>
+<!-- navbar ends -->
 
-    <!-- Home -->
 
-    <section class="home reveal" id="Home">
-      <div id="particles-js"></div>
+    <!-- hero section starts -->
+<section class="home" id="home">
+  <div id="particles-js"></div>
 
-      <div class="content">
-        <h3>Hi There,</h3>
-        <h3 class="name">I'm Usman Ali</h3>
-        <div class="container">
-          <h4>I Am <span class="text"></span><span class="cursor"></span></h4>
-        </div>
-
-        <a href="#About" class="btn"
-          ><span>About Me</span>
-          <i class="fas fa-arrow-circle-down"></i>
-        </a>
-        <div class="media">
-          <a href="#" class="twitter icon"
-            ><i class="fa-brands fa-square-twitter"></i
-          ></a>
-          <a href="#" class="linkedin icon"
-            ><i class="fa-brands fa-linkedin"></i
-          ></a>
-          <a href="#" class="github icon">
-            <i class="fa-brands fa-square-github"></i
-          ></a>
-          <a href="#" class="insta icon">
-            <i class="fa-brands fa-instagram"></i
-          ></a>
-          <a href="#" class="facebook icon">
-            <i class="fa-brands fa-facebook-messenger"></i
-          ></a>
-        </div>
-      </div>
-
-      <div class="image-cartoon">
-        <img src="Img/Cartoon.png" alt="" />
-      </div>
-    </section>
-    <!-- End Home Section -->
-
-    <!-- About section -->
-
-    <div class="about-me">
-      <i class="bi bi-person-fill"></i>
-      <h1>About</h1>
-      <h1 class="myself">Me</h1>
+  <div class="content scroll-element" id="content">
+  <h2>Hi There,<br/> I'm Usman <span>ALi</span></h2>
+  <p>I am into <span class="text"></span><span class="cursor">|</span></p>
+  <a href="#about" class="btn"><span>About Me</span>
+    <i class="fas fa-arrow-circle-down"></i>
+  </a>
+  <div class="socials">
+      <ul class="social-icons scroll-element">
+        <li><a class="linkedin" aria-label="LinkedIn" href="" target="_blank"><i class="fab fa-linkedin"></i></a></li> 
+        <li><a class="github" aria-label="GitHub" href="" target="_blank"><i class="fab fa-github"></i></a></li>
+        <li><a class="twitter" aria-label="Twitter" href="" target="_blank"><i class="fab fa-twitter"></i></a></li>
+        <li><a class="telegram" aria-label="Telegram" href="" target="_blank"><i class="fab fa-telegram-plane"></i></a></li>
+        <li><a class="instagram" aria-label="Instagram" href=""><i class="fab fa-instagram" target="_blank"></i></a></li>
+        <li><a class="dev" aria-label="Dev" href="" target="_blank"><i class="fab fa-dev"></i></a></li>
+      </ul>
     </div>
+  </div>
+<div class="image scroll-element">
+  <img draggable="false" class="tilt" src="./Img/hero.png" alt="">
+</div>
+</section>
+<!-- hero section ends -->
 
-    <section class="About" id="About">
-      <div class="about-img reveal">
-        <img src="Img/ali_u.png" class="image-u" />
+    <!-- about section starts -->
+<section class="about" id="about">
+  <h2 class="heading"><i class="fas fa-user-alt"></i> About <span>Me</span></h2>
+  
+  <div class="row">
+
+  <div class="image">
+      <img draggable="false" class="tilt" src="./Img/ali_u.png" alt="">
+  </div>
+  <div class="content-about">
+    <div class="headings">
+      <h3>I'm Usman</h3>
+      <span class="tag">Front-End Developer</span>
+    </div>
+      
+      <p>I am a Front-End developer based in Lahore, Pakistan. 
+        I am an Bachelor Of Computer in Software Engineering undergraduate from VU.
+        I am very passionate about improving my coding skills & developing applications & websites.
+        I build Websites using JS.
+        Working for myself to improve my skills.
+        Love to build Full-Stack clones. </p>
+      
+      <div class="box-container">
+          <div class="box">
+            <p class="container"><span> email : </span> usmanchurahi7860@gmail.com</p>
+            <p class="container"><span > place : </span> Lahore, Pakistan - +923252931543</p>
+          </div>
+      </div>
+      
+      <div class="resumebtn">
+          <a href="" target="_blank" class="btn"><span>Resume</span>
+              <i class="fas fa-chevron-right"></i>
+          </a>
       </div>
 
-      <div class="about-content reveal">
-        <h1 class="heading">I'm Usman</h1>
-        <p class="heading-1">Full Stack Developer</p>
-        <p class="intro">
-          I am a Full-Stack developer based in Lahore, Pakistan. I am an
-          Information Technology undergraduate from SPPU. I am very passionate
-          about improving my coding skills & developing applications & websites.
-          I build WebApps and Websites using MERN Stack. Working for myself to
-          improve my skills. Love to build Full-Stack clones.
-        </p>
-        <div class="email">
-          <p><a>Email :</a> usmanchurahi7860@gmail.com</p>
-        </div>
-        <div class="place">
-          <p><a>Place :</a> Lahore, Pakistan- +923252931543</p>
-        </div>
-        <a href="#" class="button"
-          ><span>Resume</span>
-          <i class="fas fa-arrow-circle-right"></i>
-        </a>
-      </div>
-    </section>
-    <!-- End About Section -->
+  </div>
+  </div>
+</section>
+<!-- about section ends -->
+
 
     <!-- Skills Section -->
+    <section class="skills" id="skills">
 
-    <div class="skill-ability">
-      <h1><i class="fa-solid fa-laptop-code"></i> Skills &</h1>
-      <h1 class="ability">Abilities</h1>
-    </div>
-
-    <section class="Skills" id="Skills">
-      <div class="skill-icon reveal">
+      <h2 class="heading"><i class="fas fa-laptop-code"></i> Skills & <span>Abilities</span></h2>
+    
+      <div class="container">
+        <div class="skills-row" id="skillsContainer">
         <div class="cpp pic">
           <img src="/Img/c-plus-plus-logo.png" alt="" />
           <p>C++</p>
@@ -248,6 +240,7 @@
           <p>DigitalOcean</p>
         </div>
       </div>
+      </div>
     </section>
 
     <!-- Education Section -->
@@ -264,7 +257,7 @@
         Think.
       </p>
       <div class="box-container">
-        <div class="box">
+        <div class="box container">
           <div class="image">
             
           <img src="University.jpg" alt="" />
@@ -275,7 +268,7 @@
             <h4>2023-2027 | Pursuing</h4>
           </div>
         </div>
-        <div class="box">
+        <div class="box container">
           <div class="image">
             <img src="images.jpeg" alt="My College" />
           </div>
@@ -292,7 +285,7 @@
 
   <h2 class="heading"><i class="fas fa-briefcase"></i> Experience </h2>
 
-  <div class="timeline">
+  <div class="timeline " >
 
     <div class="container right">
       <div class="content">
@@ -300,8 +293,8 @@
           <h2>Self Employed</h2>
         </div>
         <div class="desc">
-            <h3>Full Stack Developer</h3>
-            <p>Oct 2021 - present</p>
+            <h3>WordPress Developer</h3>
+            <p>Sep 2023 - present</p>
         </div>
       </div>
     </div>
@@ -309,11 +302,11 @@
     <div class="container left">
       <div class="content">
         <div class="tag">
-          <h2>Mapstreak Flyseas</h2>
+          <h2>Fiverr </h2>
         </div>
         <div class="desc">
-            <h3>Web Developer | Internship</h3>
-            <p>June 2021 - Dec 2021</p>
+            <h3>Web Developer | Remotely </h3>
+            <p>Dec 2023 - Present </p>
         </div>
       </div>
     </div>
@@ -321,11 +314,11 @@
     <div class="container right">
       <div class="content">
         <div class="tag">
-          <h2>The Spark Foundation</h2>
+          <h2> Freelancer </h2>
         </div>
         <div class="desc">
-            <h3>Website Developer | Internship</h3>
-            <p>May 2021 - June 2021</p>
+            <h3>Front-End Developer | Remotely </h3>
+            <p>Jan 2024 - Present</p>
         </div>
       </div>
     </div>
@@ -333,11 +326,11 @@
     <div class="container left">
       <div class="content">
         <div class="tag">
-          <h2>The Spark Foundation</h2>
+          <h2>PeoplePerhour </h2>
         </div>
         <div class="desc">
-            <h3>Mobile Application Developer | Internship</h3>
-            <p>April 2021 - May 2021</p>
+            <h3>E-Commerce Developer | Remotely</h3>
+            <p>Feb 2024 - Present</p>
         </div>
       </div>
     </div>
@@ -345,11 +338,11 @@
     <div class="container right">
       <div class="content">
         <div class="tag">
-          <h2>Frshr Technologies</h2>
+          <h2>Guru</h2>
         </div>
         <div class="desc">
-            <h3>Wordpress Developer | Internship</h3>
-            <p>April 2021 - April 2021</p>
+            <h3>Wordpress Developer | Remotely</h3>
+            <p>Feb 2024 - Present</p>
         </div>
       </div>
     </div>
@@ -357,11 +350,11 @@
     <div class="container left">
       <div class="content">
         <div class="tag">
-          <h2>WonderingBlog</h2>
+          <h2>Upwork</h2>
         </div>
         <div class="desc">
-            <h3>Web Development & SEO | Internship</h3>
-            <p>March 2021 - April 2021</p>
+            <h3>Web Development & Front-End | Remotely</h3>
+            <p>Feb 2024 - Present</p>
         </div>
       </div>
     </div>
@@ -390,7 +383,7 @@
       </div>
     <form id="contact-form">
       
-      <div class="form-group">
+      <div class="form-group ">
         <div class="field">
           <input type="text" name="name" placeholder="Name" required>
           <i class='fas fa-user'></i>
@@ -466,22 +459,24 @@
     <script src="Particals.js"></script>
     <script src="Particals1.js"></script>
 
-    <script
+    <script src="Portfolio.js"></script>
+    <!-- <script
       src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"
       integrity="sha512-SttpKhJqONuBVxbRcuH0wezjuX+BoFoli0yPsnrAADcHsQMW8rkR84ItFHGIkPvhnlRnE2FaifDOUw+EltbuHg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
 
-    <script src="Portfolio.js"></script>
 
    <!-- scroll reveal anim -->
 <script src="https://unpkg.com/scrollreveal"></script>
 
-<script
+<!-- <script
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"
-    ></script>
+    ></script>  -->
+
+    <script src="script.js"></script>
 
   </body>
 </html>
