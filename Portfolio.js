@@ -130,6 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 var _CONTENT = [
     "Frontend Development",
+    "Backend Development",
     "WordPress Development",
     "Web Designing",
     "E-Commerce Development",
